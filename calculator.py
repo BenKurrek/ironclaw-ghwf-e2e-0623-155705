@@ -26,6 +26,4 @@ def average(numbers):
     for n in numbers:
         total += n
 
-    # BUG: dividing by (len(numbers) - 1) instead of len(numbers) produces the
-    # wrong mean for every non-trivial input.
-    return total / (len(numbers) - 1)
+    return total / len(numbers)
