@@ -31,8 +31,7 @@ def median(numbers):
     count = len(ordered)
     middle = count // 2
 
-    # BUG: this returns ``ordered[middle]`` unconditionally, which is wrong for
-    # even-length lists (it should average the two middle values) and also
-    # picks the wrong index after sorting for some inputs. The fix must handle
-    # both the odd and even cases.
-    return ordered[middle]
+    if count % 2 == 1:
+        return ordered[middle]
+
+    return (ordered[middle - 1] + ordered[middle]) / 2
